@@ -1,0 +1,25 @@
+name: Excavator
+
+# Follows the releases of tarcisiopgs/devsweep with Scoop's own updater:
+# it reads `checkver` and `autoupdate` from the manifest, rewrites the
+# version and the hashes, and commits. It runs on this repository's own
+# token, so no secret is stored anywhere.
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  excavate:
+    name: Excavate
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Excavate
+        uses: ScoopInstaller/GithubActions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: "1"
