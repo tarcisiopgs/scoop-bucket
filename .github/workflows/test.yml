@@ -1,0 +1,28 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    name: Install on Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Scoop
+        shell: pwsh
+        run: |
+          Invoke-RestMethod get.scoop.sh -OutFile install.ps1
+          .\install.ps1 -RunAsAdmin
+          Join-Path $env:USERPROFILE "scoop\shims" | Out-File -FilePath $env:GITHUB_PATH -Append
+      - name: Install devsweep from the manifest
+        shell: pwsh
+        run: |
+          scoop install .\bucket\devsweep.json
+          devsweep --version
