@@ -1,17 +1,17 @@
 {
-    "version": "0.4.1",
+    "version": "0.4.2",
     "description": "Find and remove what a developer's machine accumulates: build artifacts, agent worktrees, emulators, Docker leftovers and dev caches.",
     "homepage": "https://github.com/tarcisiopgs/devsweep",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/tarcisiopgs/devsweep/releases/download/v0.4.1/devsweep-x86_64-pc-windows-msvc.zip",
-            "hash": "163641469675931d41684682386fbab58817ee084c13b80522afa5e575007b8d",
+            "url": "https://github.com/tarcisiopgs/devsweep/releases/download/v0.4.2/devsweep-x86_64-pc-windows-msvc.zip",
+            "hash": "65a8a36b6770338409c7acc7fb54b5bf5e2f1fd86bf6bdb2a0a179b4b29f9152",
             "extract_dir": "devsweep-x86_64-pc-windows-msvc"
         },
         "arm64": {
-            "url": "https://github.com/tarcisiopgs/devsweep/releases/download/v0.4.1/devsweep-aarch64-pc-windows-msvc.zip",
-            "hash": "4dc802ca6cab18824cd7f1456d1cfd749e226ba5f9f2a16c25de8ef03389dac4",
+            "url": "https://github.com/tarcisiopgs/devsweep/releases/download/v0.4.2/devsweep-aarch64-pc-windows-msvc.zip",
+            "hash": "e00175af50e7a0abb5d1d553888cf2d63fbc30d926489ee0f10f77c933cd0229",
             "extract_dir": "devsweep-aarch64-pc-windows-msvc"
         }
     },
